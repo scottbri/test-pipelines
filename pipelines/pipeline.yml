@@ -15,5 +15,7 @@ jobs:
   public: true
   plan:
   - get: repo-test-pipelines
+  - get: my-timer
+    trigger: true
   - task: print_hello_world
     file: repo-test-pipelines/tasks/print_hello_world/print_hello_world.yml
