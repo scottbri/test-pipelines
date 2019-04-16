@@ -1,0 +1,15 @@
+groups: []
+resources:
+- name: repo-test-pipelines
+  type: git
+  source:
+    branch: master
+    uri: https://github.com/scottbri/test-pipelines
+resource_types: []
+jobs:
+- name: basic
+  public: true
+  plan:
+  - get: repo-test-pipelines
+  - task: task_basic
+    file: tasks/task_basic/task_basic.yml
