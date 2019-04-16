@@ -1,0 +1,15 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: busybox}
+
+inputs:
+- name: bucket-waterbottle
+outputs:
+- name: bucket-waterbottle
+
+run:
+  path: bash
+  args: "-c cat bucket-waterbottle/*"

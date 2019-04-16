@@ -1,0 +1,13 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: busybox}
+
+outputs:
+- name: bucket-waterbottle
+
+run:
+  path: bash
+  args: "-c ls -al > bucket-waterbottle/output.log"

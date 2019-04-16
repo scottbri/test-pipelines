@@ -1,0 +1,7 @@
+groups: []
+resources:
+- name: repo-test-pipelines
+  type: git
+  source:
+    uri: https://github.com/scottbri/test-pipelines
+    branch: master
