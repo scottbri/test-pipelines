@@ -5,11 +5,15 @@ resources:
   source:
     branch: master
     uri: https://github.com/scottbri/test-pipelines
+- name: my-timer
+  type: time
+  source:
+    interval: 2m
 resource_types: []
 jobs:
-- name: basic
+- name: print_hello_world
   public: true
   plan:
   - get: repo-test-pipelines
-  - task: task_basic
-    file: repo-test-pipelines/tasks/task_basic/task_basic.yml
+  - task: print_hello_world
+    file: repo-test-pipelines/tasks/print_hello_world/print_hello_world.yml
