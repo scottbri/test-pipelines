@@ -8,11 +8,12 @@ image_resource:
 inputs:
 - name: bucket-waterbottle
 outputs:
-- name: bucket-waterbottle
+- name: output-waterbottle
 
 run:
   path: ash
   args:
   - "-c"
   - |
-    cp bucket-waterbottle/output.log bucket-waterbottle/processed.txt
+    cp output-waterbottle/output.log output-waterbottle/processed.txt
+    cat "finished" >> output-waterbottle/processed.txt
