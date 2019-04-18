@@ -13,4 +13,4 @@ run:
   args:
   - "-c"
   - |
-  ls -al > bucket-waterbottle/output.log
+    ls -al > bucket-waterbottle/output.log

@@ -19,12 +19,7 @@ jobs:
     trigger: true
   - task: create-files
     file: repo-test-pipelines/tasks/create-files/create-files.yml
-    output: bucket-waterbottle
   - task: process-files
     file: repo-test-pipelines/tasks/process-files/process-files.yml
-    input: bucket-waterbottle
-    output: bucket-waterbottle
   - task: output-files
     file: repo-test-pipelines/tasks/output-files/output-files.yml
-    input: bucket-waterbottle
-    output: bucket-waterbottle
