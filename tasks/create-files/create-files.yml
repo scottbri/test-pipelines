@@ -9,7 +9,7 @@ outputs:
 - name: bucket-waterbottle
 
 run:
-  path: bash
+  path: ash
   args:
   - "-c"
   - |
