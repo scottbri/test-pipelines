@@ -18,18 +18,22 @@ jobs:
   - get: my-timer
     trigger: true
   - task: create-files
-    file: repo-test-pipelines/tasks/create-files/create-files.yml
+    file: repo-test-pipelines/tasks/create-files.yml
+
 - name: process-files
-  public: true
+  public: false
   plan:
   - get: repo-test-pipelines
-    passed: [create-files]
+  - passed: [create-files]
+    trigger: true
   - task: process-files
-    file: repo-test-pipelines/tasks/process-files/process-files.yml
+    file: repo-test-pipelines/tasks/process-files.yml
+
 - name: output-files
-  public: true
+  public: false
   plan:
   - get: repo-test-pipelines
-    passed: [process-files]
+  - passed: [process-files]
+    trigger: true
   - task: output-files
-    file: repo-test-pipelines/tasks/output-files/output-files.yml
+    file: repo-test-pipelines/tasks/output-files.yml
