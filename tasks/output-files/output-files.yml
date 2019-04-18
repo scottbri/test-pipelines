@@ -15,4 +15,4 @@ run:
   args:
   - "-c"
   - |
-  cat bucket-waterbottle/*
+    cat bucket-waterbottle/*

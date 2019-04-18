@@ -15,4 +15,4 @@ run:
   args:
   - "-c"
   - |
-  cp bucket-waterbottle/output.log bucket-waterbottle/processed.txt
+    cp bucket-waterbottle/output.log bucket-waterbottle/processed.txt
