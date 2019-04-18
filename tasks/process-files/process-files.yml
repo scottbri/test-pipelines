@@ -15,5 +15,5 @@ run:
   args:
   - "-c"
   - |
-    cp output-waterbottle/output.log output-waterbottle/processed.txt
-    cat "finished" >> output-waterbottle/processed.txt
+    cp bucket-waterbottle/output.log output-waterbottle/processed.txt
+    echo "finished" >> output-waterbottle/processed.txt
