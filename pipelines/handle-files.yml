@@ -1,0 +1,38 @@
+groups: []
+resources:
+- name: repo-test-pipelines
+  type: git
+  source:
+    branch: master
+    uri: https://github.com/scottbri/test-pipelines
+- name: my-timer
+  type: time
+  source:
+    interval: 20m
+resource_types: []
+jobs:
+- name: create-files
+  public: true
+  plan:
+  - get: repo-test-pipelines
+  - get: my-timer
+    trigger: true
+  - task: create-files
+    file: repo-test-pipelines/tasks/create-files/create-files.yml
+    output: bucket-waterbottle
+- name: process-files
+  public: true
+  plan:
+  - get: repo-test-pipelines
+  - task: process-files
+    file: repo-test-pipelines/tasks/process-files/process-files.yml
+    input: bucket-waterbottle
+    output: bucket-waterbottle
+- name: output-files
+  public: true
+  plan:
+  - get: repo-test-pipelines
+  - task: output-files
+    file: repo-test-pipelines/tasks/output-files/output-files.yml
+    input: bucket-waterbottle
+    output: bucket-waterbottle
