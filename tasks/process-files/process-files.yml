@@ -12,4 +12,7 @@ outputs:
 
 run:
   path: bash
-  args: "-c cp bucket-waterbottle/output.log bucket-waterbottle/processed.txt"
+  args:
+  - "-c"
+  - |
+  cp bucket-waterbottle/output.log bucket-waterbottle/processed.txt

@@ -10,4 +10,7 @@ outputs:
 
 run:
   path: bash
-  args: "-c ls -al > bucket-waterbottle/output.log"
+  args:
+  - "-c"
+  - |
+  ls -al > bucket-waterbottle/output.log

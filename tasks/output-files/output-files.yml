@@ -12,4 +12,7 @@ outputs:
 
 run:
   path: bash
-  args: "-c cat bucket-waterbottle/*"
+  args:
+  - "-c"
+  - |
+  cat bucket-waterbottle/*
