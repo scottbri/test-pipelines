@@ -14,3 +14,4 @@ run:
   - "-c"
   - |
     ls -al > bucket-waterbottle/output.log
+    ls -al

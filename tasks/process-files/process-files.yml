@@ -17,3 +17,4 @@ run:
   - |
     cp bucket-waterbottle/output.log output-waterbottle/processed.txt
     echo "finished" >> output-waterbottle/processed.txt
+    ls -al

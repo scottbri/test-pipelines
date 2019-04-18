@@ -14,3 +14,4 @@ run:
   - "-c"
   - |
     cat output-waterbottle/*
+    ls -al
