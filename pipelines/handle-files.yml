@@ -22,12 +22,14 @@ jobs:
 - name: process-files
   public: true
   plan:
-  - get: create-files
+  - get: repo-test-pipelines
+    passed: [create-files]
   - task: process-files
     file: repo-test-pipelines/tasks/process-files/process-files.yml
 - name: output-files
   public: true
   plan:
-  - get: process files
+  - get: repo-test-pipelines
+    passed: [process-files]
   - task: output-files
     file: repo-test-pipelines/tasks/output-files/output-files.yml
