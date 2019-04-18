@@ -1,9 +1,9 @@
 resources:
-- name: test-pipelines
+- name: repo-test-pipelines
   type: git
   source:
     uri: https://github.com/scottbri/test-pipelines
-    branch: main
+    branch: master
 
 - name: hello-world-docker-image
   type: docker-image
@@ -17,10 +17,10 @@ jobs:
 - name: publish
   public: true
   plan:
-  - get: test-pipelines
+  - get: repo-test-pipelines
   - put: hello-world-docker-image
     params:
-      build: tasks/docker
+      build: repo-test-pipelines/tasks/docker
   - task: run
     config:
       platform: linux
