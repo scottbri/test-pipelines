@@ -24,7 +24,7 @@ jobs:
   public: false
   plan:
   - get: repo-test-pipelines
-  - passed: [create-files]
+    passed: [create-files]
     trigger: true
   - task: process-files
     file: repo-test-pipelines/tasks/process-files.yml
@@ -33,7 +33,7 @@ jobs:
   public: false
   plan:
   - get: repo-test-pipelines
-  - passed: [process-files]
+    passed: [process-files]
     trigger: true
   - task: output-files
     file: repo-test-pipelines/tasks/output-files.yml
